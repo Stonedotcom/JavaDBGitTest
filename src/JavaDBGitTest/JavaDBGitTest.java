@@ -115,7 +115,7 @@ public class JavaDBGitTest {
             System.out.print("1. 입력 2.전체출력 3.이름 검색 4.이름 삭제 5.종료 : ");
             int num = sc.nextInt();
             if (num == 1) {
-                sq.DataInsert(ic.valueReturn()); // Data타입의 d를 DataInsert함수에 넣어 쿼리문 만들어 던져
+                sq.DataInsert(ic.valueReturn());
             }
             else if (num == 2) {
                 sq.selectAll();
