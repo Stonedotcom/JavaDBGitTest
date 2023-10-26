@@ -7,14 +7,14 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 class Data {
-    String a, b, c;
+    String name, telnum, address;
 
-    public String getA() {return a;}
-    public void setA(String a) {this.a = a;} //이름
-    public String getB() {return b;}
-    public void setB(String b) {this.b = b;} //전화번호
-    public String getC() {return c;}
-    public void setC(String c) {this.c = c;} //주소
+    public String getName() {return name;}
+    public void setName(String name) {this.name = name;} //이름
+    public String getTelnum() {return telnum;}
+    public void setTelnum(String telnum) {this.telnum = telnum;} //전화번호
+    public String getAddr() {return address;}
+    public void setAddr(String address) {this.address = address;} //주소
 
 }
 
@@ -25,11 +25,11 @@ class InputClass
 
         Scanner scS = new Scanner(System.in);
         System.out.print("이름을 입력하세요 : ");
-        d.setA(scS.nextLine());
+        d.setName(scS.nextLine());
         System.out.print("전화번호을 입력하세요 : ");
-        d.setB(scS.nextLine());
+        d.setTelnum(scS.nextLine());
         System.out.print("주소를 입력하세요 : ");
-        d.setC(scS.nextLine());
+        d.setAddr(scS.nextLine());
         return d;
     }
 
@@ -47,9 +47,9 @@ class SQLC {
         try {
             // 쿼리문을 세팅하는 작업
             pstmt = conn.prepareStatement(" insert into phone values (?,?,?);");
-            pstmt.setString(1, d.getA());       //이름
-            pstmt.setString(2, d.getB());       //전화번호
-            pstmt.setString(3, d.getC());       //주소
+            pstmt.setString(1, d.getName());       //이름
+            pstmt.setString(2, d.getTelnum());       //전화번호
+            pstmt.setString(3, d.getAddr());       //주소
 
             // 쿼리문을 실행합니다.
             pstmt.executeUpdate();
